@@ -71,7 +71,7 @@ export function Home() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#eb0339]/10 to-[#ff4d6d]/10 border border-[#eb0339]/20 backdrop-blur-sm mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r backdrop-blur-sm mb-6 border border-gray-200 bg-gray-100"
               >
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#eb0339] opacity-75"></span>
@@ -138,7 +138,7 @@ export function Home() {
                 >
                   {/* Full view image */}
                   <img
-                    src="../../src/assets/banner.jpg"
+                    src="https://www.orientalkarate.com/wp-content/uploads/2020/02/DSC6210a-scaled.jpg"
                     alt="Karate Training"
                     className="w-full h-full object-cover"
                   />

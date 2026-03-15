@@ -206,7 +206,7 @@ export function About() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="../../src/assets/director-ali-mohammed.jpg"
+                  src="https://www.orientalkarate.com/wp-content/uploads/2020/02/nizar-benefit-500x746.jpg"
                   alt="Ali Mohammed Kyoshi — Chief Examiner & Technical Director, 8th Dan Karate, 7th Dan Kobudo"
                   className="w-full aspect-[3/4] object-cover object-top"
                 />
@@ -239,7 +239,7 @@ export function About() {
             >
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="../../src/assets/yoosuf-renshi.jpg"
+                  src="https://www.orientalkarate.com/wp-content/uploads/2021/04/7-500x746.jpg"
                   alt="Yoosuf Renshi — Asst. Chief Examiner & Technical Director, 6th Dan Karate, 5th Dan Kobudo"
                   className="w-full aspect-[3/4] object-cover object-top"
                 />

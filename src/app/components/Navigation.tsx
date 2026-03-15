@@ -51,6 +51,7 @@ export function Navigation() {
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact",
         dropdown: [
+          { name: "Contact Us", path: "/contact" },
           { name: "FAQ", path: "/faq" },
       ] 
     },
