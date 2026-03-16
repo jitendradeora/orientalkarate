@@ -99,17 +99,7 @@ export function JoinUs() {
         </div>
       </section>
 
-      {/* Special Offer Banner */}
-      <section className="relative py-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#eb0339] via-[#ff1a4f] to-[#eb0339]" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg font-bold text-white flex items-center justify-center gap-3">
-            <Gift size={20} />
-            <span>Special Offer: Get 50% OFF your first month + FREE uniform! Limited time only.</span>
-            <Gift size={20} />
-          </p>
-        </div>
-      </section>
+      
 
     
 

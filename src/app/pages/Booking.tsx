@@ -402,14 +402,15 @@ export function Booking() {
               </form>
             </motion.div>
           ) : (
+            
             <motion.div
               key="confirmation"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-[#eb0339] to-[#c70230] text-center"
+              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5 text-center"
             >
-              <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto mb-6">
-                <Check className="text-[#eb0339]" size={48} />
+              <div className="w-20 h-20 rounded-full bg-[#FFD700]/10 flex items-center justify-center mx-auto mb-6">
+                <Check className="text-[#FFD700]" size={48} />
               </div>
               <h2 className="text-3xl font-bold mb-4 text-white">Booking Confirmed!</h2>
               <p className="text-xl mb-8 text-white/80">Your free trial class has been scheduled</p>
