@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
 import { InnerPageBanner } from "../components/InnerPageBanner";
-
+import { BookOpen } from "lucide-react";
 type BlogPost = {
   id: string;
   title: string;
@@ -19,7 +19,7 @@ const mockPosts: BlogPost[] = [
     excerpt:
       "Discover how consistent training, traditional etiquette and goal-based belt progression build discipline in children and adults.",
     image:
-      "https://images.unsplash.com/photo-1601758176175-e43f5a553f12?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
+    "https://www.orientalkarate.com/wp-content/uploads/2020/02/DSC6218-scaled.jpg",
     date: "March 2026",
     readTime: "6 min read",
     tags: ["Discipline", "Kids", "Adults"],
@@ -30,7 +30,7 @@ const mockPosts: BlogPost[] = [
     excerpt:
       "From focus and confidence to fitness and respect, learn why karate is one of the best activities you can choose for your child.",
     image:
-      "https://images.unsplash.com/photo-1574694195385-d2f4d77af4ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
+      "https://www.orientalkarate.com/wp-content/uploads/2020/02/DSC6218-scaled.jpg",
     date: "February 2026",
     readTime: "5 min read",
     tags: ["Kids Program", "Parent Guide"],
@@ -41,7 +41,7 @@ const mockPosts: BlogPost[] = [
     excerpt:
       "How companies in Abu Dhabi use martial arts-based workshops to improve team bonding, stress management and productivity.",
     image:
-      "https://images.unsplash.com/photo-1521774971864-781de1403c05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1200",
+      "https://www.orientalkarate.com/wp-content/uploads/2020/12/HQ-Group-photo-scaled.jpg",
     date: "January 2026",
     readTime: "4 min read",
     tags: ["Corporate", "Wellness"],

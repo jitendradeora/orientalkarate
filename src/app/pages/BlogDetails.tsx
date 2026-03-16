@@ -12,7 +12,7 @@ const mockPostBody =
   "odio. Duis dapibus dui at massa volutpat, at dictum risus mollis.";
 
 const mockCover =
-  "https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1400";
+  "https://www.orientalkarate.com/wp-content/uploads/2020/02/DSC6218-scaled.jpg";
 
 export function BlogDetails() {
   const { slug } = useParams();
