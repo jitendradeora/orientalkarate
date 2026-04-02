@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 export function PrivacyPolicy() {
   return (
-    <div className="min-h-screen pt-[130px] bg-black text-white">
+    <div className="min-h-screen pt-24 bg-black text-white">
       <section className="bg-gradient-to-b from-black to-gray-950 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h1

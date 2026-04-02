@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { GoogleReviewBadge } from "./GoogleReviewBadge";
 
 interface Review {
   name: string;
@@ -139,10 +140,13 @@ export function ReviewSlider() {
                 transition={{ delay: idx * 0.1 }}
                 className="bg-gray-900 p-6 rounded-lg border border-gray-800"
               >
-                <div className="flex items-center mb-3">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-[#FFD700] text-[#FFD700]" />
-                  ))}
+                <div className="flex items-center justify-between gap-2 mb-3 flex-wrap">
+                  <div className="flex items-center">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} size={16} className="fill-[#FFD700] text-[#FFD700]" />
+                    ))}
+                  </div>
+                  <GoogleReviewBadge />
                 </div>
                 <p className="text-gray-300 mb-4 text-sm">{review.text}</p>
                 <div className="flex items-center justify-between">

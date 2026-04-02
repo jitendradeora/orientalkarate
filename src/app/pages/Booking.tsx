@@ -14,8 +14,8 @@ export function Booking() {
   const [selectedTime, setSelectedTime] = useState("");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [dob, setDob] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [numKids, setNumKids] = useState("1");
   const [address, setAddress] = useState("");
   const [message, setMessage] = useState("");
 
@@ -27,12 +27,16 @@ export function Booking() {
 
   const getAvailableDates = (): Array<{ id: string; display: string }> => {
     const dates: Array<{ id: string; display: string }> = [];
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 2; i <= 7; i++) {
       const date = new Date();
       date.setDate(date.getDate() + i);
       dates.push({
-        id: date.toISOString().split('T')[0],
-        display: date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })
+        id: date.toISOString().split("T")[0],
+        display: date.toLocaleDateString("en-US", {
+          weekday: "long",
+          month: "long",
+          day: "numeric",
+        }),
       });
     }
     return dates;
@@ -47,7 +51,7 @@ export function Booking() {
   const prerequisites = [
     "Avoid heavy meals 1 hour before class",
     "Wear flexible, comfortable clothing",
-    "Parents must attend kids' trial classes"
+    "Parents must attend kids' trial classes",
   ];
 
   const handleNext = () => {
@@ -55,7 +59,8 @@ export function Booking() {
     else if (currentStep === "class" && selectedClass) setCurrentStep("date");
     else if (currentStep === "date" && selectedDate) setCurrentStep("time");
     else if (currentStep === "time" && selectedTime) setCurrentStep("userInfo");
-    else if (currentStep === "userInfo" && fullName && email && mobile && dob && address) setCurrentStep("confirmation");
+    else if (currentStep === "userInfo" && fullName && email && whatsapp && numKids && address)
+      setCurrentStep("confirmation");
   };
 
   const handleBack = () => {
@@ -75,7 +80,7 @@ export function Booking() {
   const stepLabels = ["Branch", "Class", "Date", "Time", "Info"];
 
   return (
-    <div className="min-h-screen pt-[130px] bg-black text-white">
+    <div className="min-h-screen bg-black pt-24 text-white">
       {/* Hero Section - Lighter banner */}
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900" />
@@ -112,7 +117,8 @@ export function Booking() {
         </div>
       </section>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="bg-gray-50 py-10 pb-20 text-gray-900">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         {/* Progress Bar */}
         {currentStep !== "confirmation" && (
           <motion.div 
@@ -128,11 +134,11 @@ export function Booking() {
                       ? "bg-[#eb0339] text-white" 
                       : i + 1 === getStepNumber()
                         ? "bg-gradient-to-br from-[#eb0339] to-[#ff1a4f] text-white shadow-lg shadow-[#eb0339]/30"
-                        : "bg-gray-800 text-gray-500"
+                        : "bg-gray-200 text-gray-500"
                   }`}>
                     {i + 1 < getStepNumber() ? <Check size={18} /> : i + 1}
                   </div>
-                  <span className={`text-xs font-medium ${i + 1 <= getStepNumber() ? "text-white" : "text-gray-500"}`}>
+                  <span className={`text-xs font-medium ${i + 1 <= getStepNumber() ? "text-gray-900" : "text-gray-400"}`}>
                     {label}
                   </span>
                 </div>
@@ -145,7 +151,7 @@ export function Booking() {
                   className={`flex-1 h-1.5 rounded-full transition-all duration-300 ${
                     step <= getStepNumber() 
                       ? "bg-gradient-to-r from-[#eb0339] to-[#ff1a4f]" 
-                      : "bg-gray-800"
+                      : "bg-gray-200"
                   }`}
                 />
               ))}
@@ -160,45 +166,46 @@ export function Booking() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center">
-                  <MapPin className="text-[#FFD700]" size={28} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eb0339]/10">
+                  <MapPin className="text-[#eb0339]" size={28} />
                 </div>
-                <h2 className="text-3xl font-bold">Select Branch</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Select Branch</h2>
               </div>
 
-              <div className="mb-8 p-6 rounded-2xl bg-[#eb0339]/10 border border-[#eb0339]/30">
-                <h3 className="font-bold mb-4 flex items-center gap-2">
-                  <AlertCircle className="text-[#FFD700]" size={20} />
+              <div className="mb-8 rounded-2xl border border-[#eb0339]/25 bg-[#eb0339]/5 p-6">
+                <h3 className="mb-4 flex items-center gap-2 font-bold text-gray-900">
+                  <AlertCircle className="text-[#eb0339]" size={20} />
                   Important Prerequisites
                 </h3>
                 <ul className="space-y-2">
                   {prerequisites.map((item, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#eb0339]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#eb0339]/15">
                         <Check className="text-[#eb0339]" size={12} />
                       </div>
-                      <span className="text-gray-300">{item}</span>
+                      <span className="text-gray-600">{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 {branches.map((branch) => (
                   <button
                     key={branch.id}
+                    type="button"
                     onClick={() => setSelectedBranchId(branch.id)}
-                    className={`text-left p-6 rounded-2xl border-2 transition-all duration-300 ${
+                    className={`rounded-2xl border-2 p-6 text-left transition-all duration-300 ${
                       selectedBranchId === branch.id
-                        ? "border-[#eb0339] bg-[#eb0339]/10"
-                        : "border-white/10 hover:border-white/20 bg-white/5"
+                        ? "border-[#eb0339] bg-[#eb0339]/8"
+                        : "border-gray-200 bg-gray-50 hover:border-gray-300"
                     }`}
                   >
-                    <h3 className="text-lg font-bold mb-2 text-white">{branch.name}</h3>
-                    <p className="text-sm text-gray-400">{branch.address}</p>
+                    <h3 className="mb-2 text-lg font-bold text-gray-900">{branch.name}</h3>
+                    <p className="text-sm text-gray-600">{branch.address}</p>
                   </button>
                 ))}
               </div>
@@ -209,27 +216,28 @@ export function Booking() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center">
-                  <Users className="text-[#FFD700]" size={28} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eb0339]/10">
+                  <Users className="text-[#eb0339]" size={28} />
                 </div>
-                <h2 className="text-3xl font-bold">Select Class Type</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Select Class Type</h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
                 {classes.map((classType) => (
                   <button
                     key={classType.id}
+                    type="button"
                     onClick={() => setSelectedClass(classType.id)}
-                    className={`text-left p-6 rounded-2xl border-2 transition-all duration-300 h-full ${
+                    className={`h-full rounded-2xl border-2 p-6 text-left transition-all duration-300 ${
                       selectedClass === classType.id
-                        ? "border-[#eb0339] bg-[#eb0339]/10"
-                        : "border-white/10 hover:border-white/20 bg-white/5"
+                        ? "border-[#eb0339] bg-[#eb0339]/8"
+                        : "border-gray-200 bg-gray-50 hover:border-gray-300"
                     }`}
                   >
-                    <h3 className="text-xl font-bold mb-2 text-white">{classType.name}</h3>
-                    <p className="text-gray-400">{classType.description}</p>
+                    <h3 className="mb-2 text-xl font-bold text-gray-900">{classType.name}</h3>
+                    <p className="text-gray-600">{classType.description}</p>
                   </button>
                 ))}
               </div>
@@ -240,26 +248,27 @@ export function Booking() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center">
-                  <Calendar className="text-[#FFD700]" size={28} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eb0339]/10">
+                  <Calendar className="text-[#eb0339]" size={28} />
                 </div>
-                <h2 className="text-3xl font-bold">Select Date</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Select Date</h2>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 {getAvailableDates().map((date) => (
                   <button
                     key={date.id}
+                    type="button"
                     onClick={() => setSelectedDate(date.id)}
-                    className={`p-6 rounded-2xl border-2 transition-all duration-300 ${
+                    className={`rounded-2xl border-2 p-6 transition-all duration-300 ${
                       selectedDate === date.id
-                        ? "border-[#eb0339] bg-[#eb0339]/10"
-                        : "border-white/10 hover:border-white/20 bg-white/5"
+                        ? "border-[#eb0339] bg-[#eb0339]/8"
+                        : "border-gray-200 bg-gray-50 hover:border-gray-300"
                     }`}
                   >
-                    <p className="font-bold text-lg text-white">{date.display}</p>
+                    <p className="text-lg font-bold text-gray-900">{date.display}</p>
                   </button>
                 ))}
               </div>
@@ -270,26 +279,27 @@ export function Booking() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center">
-                  <Clock className="text-[#FFD700]" size={28} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eb0339]/10">
+                  <Clock className="text-[#eb0339]" size={28} />
                 </div>
-                <h2 className="text-3xl font-bold">Select Time Slot</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Select Time Slot</h2>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4">
                 {timeSlots.map((time) => (
                   <button
                     key={time}
+                    type="button"
                     onClick={() => setSelectedTime(time)}
-                    className={`p-4 rounded-2xl border-2 transition-all duration-300 ${
+                    className={`rounded-2xl border-2 p-4 transition-all duration-300 ${
                       selectedTime === time
-                        ? "border-[#eb0339] bg-[#eb0339]/10"
-                        : "border-white/10 hover:border-white/20 bg-white/5"
+                        ? "border-[#eb0339] bg-[#eb0339]/8"
+                        : "border-gray-200 bg-gray-50 hover:border-gray-300"
                     }`}
                   >
-                    <p className="font-bold text-white">{time}</p>
+                    <p className="font-bold text-gray-900">{time}</p>
                   </button>
                 ))}
               </div>
@@ -300,20 +310,20 @@ export function Booking() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5"
+              className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm"
             >
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#FFD700]/10 flex items-center justify-center">
-                  <User className="text-[#FFD700]" size={28} />
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eb0339]/10">
+                  <User className="text-[#eb0339]" size={28} />
                 </div>
-                <h2 className="text-3xl font-bold">Your Information</h2>
+                <h2 className="text-3xl font-bold text-gray-900">Your details</h2>
               </div>
 
               <form className="space-y-5" onSubmit={(e) => { e.preventDefault(); handleNext(); }}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   <div>
-                    <label htmlFor="fullName" className="block text-sm font-medium text-gray-300 mb-2">
-                      Full Name <span className="text-[#eb0339]">*</span>
+                    <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-gray-700">
+                      Parent name <span className="text-[#eb0339]">*</span>
                     </label>
                     <input
                       type="text"
@@ -321,13 +331,13 @@ export function Booking() {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       required
-                      className="w-full bg-black/50 border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 transition-all placeholder:text-gray-500"
-                      placeholder="Enter your full name"
+                      className="w-full rounded-full border border-gray-200 bg-gray-50 px-4 py-3.5 text-gray-900 transition-all placeholder:text-gray-400 focus:border-[#eb0339] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#eb0339]/20"
+                      placeholder="Parent or guardian full name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                    <label htmlFor="email" className="mb-2 block text-sm font-medium text-gray-700">
                       Email <span className="text-[#eb0339]">*</span>
                     </label>
                     <input
@@ -336,42 +346,45 @@ export function Booking() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       required
-                      className="w-full bg-black/50 border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 transition-all placeholder:text-gray-500"
+                      className="w-full rounded-full border border-gray-200 bg-gray-50 px-4 py-3.5 text-gray-900 transition-all placeholder:text-gray-400 focus:border-[#eb0339] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#eb0339]/20"
                       placeholder="Enter your email address"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="mobile" className="block text-sm font-medium text-gray-300 mb-2">
-                      Mobile Number <span className="text-[#eb0339]">*</span>
+                    <label htmlFor="whatsapp" className="mb-2 block text-sm font-medium text-gray-700">
+                      WhatsApp number <span className="text-[#eb0339]">*</span>
                     </label>
                     <input
                       type="tel"
-                      id="mobile"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
+                      id="whatsapp"
+                      value={whatsapp}
+                      onChange={(e) => setWhatsapp(e.target.value)}
                       required
-                      className="w-full bg-black/50 border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 transition-all placeholder:text-gray-500"
-                      placeholder="Enter your mobile number"
+                      className="w-full rounded-full border border-gray-200 bg-gray-50 px-4 py-3.5 text-gray-900 transition-all placeholder:text-gray-400 focus:border-[#eb0339] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#eb0339]/20"
+                      placeholder="+971 50 000 0000"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="dob" className="block text-sm font-medium text-gray-300 mb-2">
-                      Date of Birth <span className="text-[#eb0339]">*</span>
+                    <label htmlFor="numKids" className="mb-2 block text-sm font-medium text-gray-700">
+                      Number of kids <span className="text-[#eb0339]">*</span>
                     </label>
                     <input
-                      type="date"
-                      id="dob"
-                      value={dob}
-                      onChange={(e) => setDob(e.target.value)}
+                      type="number"
+                      id="numKids"
+                      min={1}
+                      max={20}
+                      value={numKids}
+                      onChange={(e) => setNumKids(e.target.value)}
                       required
-                      className="w-full bg-black/50 border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 transition-all"
+                      className="w-full rounded-full border border-gray-200 bg-gray-50 px-4 py-3.5 text-gray-900 transition-all placeholder:text-gray-400 focus:border-[#eb0339] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#eb0339]/20"
+                      placeholder="1"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="address" className="block text-sm font-medium text-gray-300 mb-2">
+                  <div className="md:col-span-2">
+                    <label htmlFor="address" className="mb-2 block text-sm font-medium text-gray-700">
                       Address <span className="text-[#eb0339]">*</span>
                     </label>
                     <textarea
@@ -380,13 +393,13 @@ export function Booking() {
                       onChange={(e) => setAddress(e.target.value)}
                       required
                       rows={3}
-                      className="w-full bg-black/50 border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 transition-all resize-none placeholder:text-gray-500"
+                      className="w-full resize-none rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-gray-900 transition-all placeholder:text-gray-400 focus:border-[#eb0339] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#eb0339]/20"
                       placeholder="Enter your address"
                     />
                   </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                  <div className="md:col-span-2">
+                    <label htmlFor="message" className="mb-2 block text-sm font-medium text-gray-700">
                       Additional Notes (Optional)
                     </label>
                     <textarea
@@ -394,7 +407,7 @@ export function Booking() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       rows={3}
-                      className="w-full bg-black/50 border border-white/10 text-white rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 transition-all resize-none placeholder:text-gray-500"
+                      className="w-full resize-none rounded-2xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-gray-900 transition-all placeholder:text-gray-400 focus:border-[#eb0339] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#eb0339]/20"
                       placeholder="Any additional information or questions?"
                     />
                   </div>
@@ -407,54 +420,42 @@ export function Booking() {
               key="confirmation"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="p-8 rounded-3xl bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5 text-center"
+              className="rounded-3xl border border-gray-200 bg-white p-8 text-center shadow-sm"
             >
-              <div className="w-20 h-20 rounded-full bg-[#FFD700]/10 flex items-center justify-center mx-auto mb-6">
-                <Check className="text-[#FFD700]" size={48} />
+              <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-[#eb0339]/10">
+                <Check className="text-[#eb0339]" size={48} />
               </div>
-              <h2 className="text-3xl font-bold mb-4 text-white">Booking Confirmed!</h2>
-              <p className="text-xl mb-8 text-white/80">Your free trial class has been scheduled</p>
+              <h2 className="mb-4 text-3xl font-bold text-gray-900">Booking Confirmed!</h2>
+              <p className="mb-8 text-xl text-gray-600">Your free trial class has been scheduled</p>
 
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl mb-6 text-left">
-                <h3 className="font-bold text-lg mb-4 text-white flex items-center gap-2">
-                  <Calendar size={18} />
+              <div className="mb-6 rounded-2xl border border-gray-100 bg-gray-50 p-6 text-left">
+                <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-gray-900">
+                  <Calendar size={18} className="text-[#eb0339]" />
                   Booking Details
                 </h3>
-                <div className="space-y-3 text-white/90">
-                  <p><span className="font-semibold text-white">Branch:</span> {selectedBranch?.name}</p>
-                  <p><span className="font-semibold text-white">Class:</span> {classes.find(c => c.id === selectedClass)?.name}</p>
-                  <p><span className="font-semibold text-white">Date:</span> {getAvailableDates().find(d => d.id === selectedDate)?.display}</p>
-                  <p><span className="font-semibold text-white">Time:</span> {selectedTime}</p>
+                <div className="space-y-3 text-gray-700">
+                  <p><span className="font-semibold text-gray-900">Branch:</span> {selectedBranch?.name}</p>
+                  <p><span className="font-semibold text-gray-900">Class:</span> {classes.find(c => c.id === selectedClass)?.name}</p>
+                  <p><span className="font-semibold text-gray-900">Date:</span> {getAvailableDates().find(d => d.id === selectedDate)?.display}</p>
+                  <p><span className="font-semibold text-gray-900">Time:</span> {selectedTime}</p>
                 </div>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl mb-6 text-left">
-                <h3 className="font-bold text-lg mb-4 text-white flex items-center gap-2">
-                  <User size={18} />
-                  Your Information
-                </h3>
-                <div className="space-y-3 text-white/90">
-                  <p><span className="font-semibold text-white">Full Name:</span> {fullName}</p>
-                  <p><span className="font-semibold text-white">Email:</span> {email}</p>
-                  <p><span className="font-semibold text-white">Mobile:</span> {mobile}</p>
-                  <p><span className="font-semibold text-white">Date of Birth:</span> {dob ? new Date(dob).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</p>
-                  <p><span className="font-semibold text-white">Address:</span> {address}</p>
-                  {message && <p><span className="font-semibold text-white">Message:</span> {message}</p>}
-                </div>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl mb-8 text-white/90">
-                <p className="text-lg mb-2">
+              <div className="mb-8 rounded-2xl border border-gray-100 bg-gray-50 p-6 text-gray-700">
+                <p className="mb-2 text-lg">
                   A confirmation message will be sent to you via WhatsApp shortly.
                 </p>
-                <p className="text-sm text-white/70">
-                  Please arrive 10 minutes early and bring comfortable clothing.
+                <p className="text-sm text-gray-600">
+                  Please arrive 10 minutes early and wear comfortable clothing.
+                </p>
+                <p className="mt-2 text-sm text-gray-600">
+                  Parent should be with child during the class.
                 </p>
               </div>
 
               <Link
                 to="/"
-                className="inline-flex items-center gap-2 bg-white text-[#eb0339] px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:bg-[#FFD700] hover:text-black"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] px-6 py-3 text-sm font-semibold text-white shadow-md transition-opacity hover:opacity-95"
               >
                 <Home size={20} />
                 Return to Home
@@ -470,42 +471,45 @@ export function Booking() {
             className="flex justify-between mt-8"
           >
             <button
+              type="button"
               onClick={handleBack}
               disabled={currentStep === "branch"}
-              className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 ${
+              className={`inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold transition-all duration-300 ${
                 currentStep === "branch"
-                  ? "bg-gray-800/50 text-gray-600 cursor-not-allowed"
-                  : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
+                  ? "cursor-not-allowed bg-gray-200 text-gray-400"
+                  : "border border-gray-300 bg-white text-gray-900 hover:border-[#eb0339] hover:text-[#eb0339]"
               }`}
             >
               <ArrowLeft size={18} />
               Back
             </button>
             <button
+              type="button"
               onClick={handleNext}
               disabled={
                 (currentStep === "branch" && !selectedBranchId) ||
                 (currentStep === "class" && !selectedClass) ||
                 (currentStep === "date" && !selectedDate) ||
                 (currentStep === "time" && !selectedTime) ||
-                (currentStep === "userInfo" && (!fullName || !email || !mobile || !dob || !address))
+                (currentStep === "userInfo" && (!fullName || !email || !whatsapp || !numKids || !address))
               }
-              className={`inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 ${
+              className={`inline-flex items-center gap-2 rounded-full px-6 py-3.5 font-semibold transition-all duration-300 ${
                 (currentStep === "branch" && !selectedBranchId) ||
                 (currentStep === "class" && !selectedClass) ||
                 (currentStep === "date" && !selectedDate) ||
                 (currentStep === "time" && !selectedTime) ||
-                (currentStep === "userInfo" && (!fullName || !email || !mobile || !dob || !address))
-                  ? "bg-gray-800/50 text-gray-600 cursor-not-allowed"
-                  : "bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] text-white hover:shadow-lg hover:shadow-[#eb0339]/30"
+                (currentStep === "userInfo" && (!fullName || !email || !whatsapp || !numKids || !address))
+                  ? "cursor-not-allowed bg-gray-200 text-gray-400"
+                  : "bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] text-white shadow-md shadow-[#eb0339]/20 hover:shadow-lg"
               }`}
             >
-              {currentStep === "userInfo" ? "Confirm Booking" : "Next"}
+              {currentStep === "userInfo" ? "Confirm booking — 0 AED" : "Next"}
               <ArrowRight size={18} />
             </button>
           </motion.div>
         )}
       </div>
+      </section>
     </div>
   );
 }

@@ -11,21 +11,21 @@ export function Footer() {
 
   const quickLinks = [
     { name: "About Us", path: "/about" },
-    { name: "Our Instructors", path: "/instructors" },
-    { name: "Benefits", path: "/benefits" },
+    { name: "Programs", path: "/programs" },
+    { name: "Offers", path: "/offers" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
     { name: "FAQ", path: "/faq" },
     { name: "Blog", path: "/blog" },
-    { name: "Classes & Halls", path: "/classes-available" },
+    { name: "Test Results", path: "/test-results" },
   ];
 
   const programs = [
-    { name: "Kids Program (5-14)", path: "/kids" },
-    { name: "Adults Program (15-60)", path: "/join-us" },
+    { name: "Kids Program (5-14)", path: "/programs/kids" },
+    { name: "Adults Program (15-60)", path: "/programs/adults" },
+    { name: "Classes & Custom", path: "/programs/classes-custom" },
     { name: "Fee & Admission", path: "/fee-admission" },
-    { name: "Kobudo Training", path: "/kobudo" },
-    //{ name: "Book Free Trial", path: "/booking" },
+    { name: "Kobudo Training", path: "/programs/kobudo" },
   ];
 
   const socialLinks = [
@@ -54,31 +54,6 @@ export function Footer() {
       {/* Top accent line */}
       <div className="h-px bg-gradient-to-r from-transparent via-[#eb0339]/50 to-transparent" />
       
-      {/* Stay Updated - Different color to match theme */}
-      <div className="relative bg-white/5 border-t border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div className="text-center lg:text-left">
-              <h3 className="text-2xl font-bold mb-2 text-white">Stay Updated</h3>
-              <p className="text-gray-300">Get the latest news about classes, events, and special offers.</p>
-            </div>
-            <form className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="px-5 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#eb0339]/50 focus:border-[#eb0339]/50 min-w-[280px]"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 rounded-lg bg-[#eb0339] text-white font-semibold text-sm hover:bg-[#c70230] transition-all duration-300 hover:scale-[1.02]"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">

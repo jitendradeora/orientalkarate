@@ -1,0 +1,50 @@
+/** Chief instructors — used on About; full list for instructor grid */
+export const chiefInstructors = [
+  {
+    name: "Ali Mohammed",
+    title: "Kyoshi",
+    role: "Chief Examiner & Technical Director of International Shorin Ryu Seibukan Karate DO of UAE",
+    karateDan: "8th Dan Karate",
+    kobudoDan: "7th Dan Kobudo",
+    image: "https://www.orientalkarate.com/wp-content/uploads/2020/02/nizar-benefit-500x746.jpg",
+  },
+  {
+    name: "Yoosuf",
+    title: "Renshi",
+    role: "Asst. Chief Examiner & Technical Director of International Shorin Ryu Seibukan Karate DO of UAE",
+    karateDan: "6th Dan Karate",
+    kobudoDan: "5th Dan Kobudo",
+    image: "https://www.orientalkarate.com/wp-content/uploads/2021/04/7-500x746.jpg",
+  },
+  {
+    name: "Chin Mok Sung",
+    title: "Hanshi",
+    role: "Supreme Instructor — Vice President of the Malaysian Karate Federation",
+    karateDan: "9th Dan Karate",
+    kobudoDan: "8th Dan Kobudo",
+    image: "https://images.unsplash.com/photo-1764616211830-993b5e360d82?auto=format&fit=crop&w=600&q=80",
+  },
+];
+
+export const ourInstructors = [
+  { name: "Yousuf Kancholy", rank: "5th Dan Karate & 5th Dan Kobudo" },
+  { name: "Hameed Aboobacker", rank: "5th Dan Karate & 5th Dan Kobudo" },
+  { name: "Mohammed Nawas", rank: "5th Dan Karate & 5th Dan Kobudo" },
+  { name: "Nizar Aboobacker", rank: "5th Dan Karate & 5th Dan Kobudo" },
+  { name: "Naseef Muhammed", rank: "5th Dan Karate & 5th Dan Kobudo" },
+  { name: "Thafjal", rank: "4th Dan Karate & 4th Dan Kobudo" },
+  { name: "Shad Ali", rank: "4th Dan Karate & 4th Dan Kobudo" },
+  { name: "Sumith", rank: "4th Dan Karate & 4th Dan Kobudo" },
+  { name: "Muhammed Shammas", rank: "4th Dan Karate & 4th Dan Kobudo" },
+  { name: "Remeesh", rank: "4th Dan Karate & 3rd Dan Kobudo" },
+  { name: "Isabin Hussain", rank: "4th Dan Karate & 4th Dan Kobudo" },
+  { name: "Mishal", rank: "4th Dan Karate & 3rd Dan Kobudo" },
+  { name: "Ansar", rank: "4th Dan Karate & 4th Dan Kobudo" },
+  { name: "Rafzan", rank: "3rd Dan Karate & 4th Dan Kobudo" },
+  { name: "Noushad Ali", rank: "3rd Dan Karate & 4th Dan Kobudo" },
+  { name: "Fajis", rank: "3rd Dan Karate & 4th Dan Kobudo" },
+  { name: "Hadi", rank: "3rd Dan Karate & 4th Dan Kobudo" },
+  { name: "Sinoj", rank: "3rd Dan Karate & 3rd Dan Kobudo" },
+  { name: "Anjunath", rank: "3rd Dan Karate & 3rd Dan Kobudo" },
+  { name: "Fahad", rank: "3rd Dan Karate & 3rd Dan Kobudo" },
+];

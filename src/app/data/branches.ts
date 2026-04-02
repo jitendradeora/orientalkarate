@@ -7,6 +7,9 @@ export interface Branch {
   whatsapp: string;
   email: string;
   googleMapsUrl: string;
+  /** Approximate coordinates for “nearest branch” (optional) */
+  lat?: number;
+  lng?: number;
   hours: {
     weekday: string;
     weekend: string;
@@ -21,6 +24,8 @@ export const branches: Branch[] = [
   {
     id: "khalidiya-ho",
     name: "Khalidiya Head Office",
+    lat: 24.4749,
+    lng: 54.3486,
     address: "H.O Khalidiya, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 677 1611",
     phone2: "+971 (2) 677 8878",
@@ -35,6 +40,8 @@ export const branches: Branch[] = [
   {
     id: "mussaffa",
     name: "Mussaffa",
+    lat: 24.3589,
+    lng: 54.5107,
     address: "Mussaffah, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 55 66 034",
     phone2: "+971 (2) 55 66 035",
@@ -49,6 +56,8 @@ export const branches: Branch[] = [
   {
     id: "electra",
     name: "Electra Salam Corner",
+    lat: 24.4971,
+    lng: 54.3677,
     address: "Next to ADCB Bank, Co-op Building, 202, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 67 17 072",
     phone2: "+971 (2) 67 17 071",
@@ -63,6 +72,8 @@ export const branches: Branch[] = [
   {
     id: "al-reem",
     name: "Al Reem Island",
+    lat: 24.4861,
+    lng: 54.4077,
     address: "Al Reem, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 641 6620",
     phone2: "+971 (2) 641 6624",
@@ -77,6 +88,8 @@ export const branches: Branch[] = [
   {
     id: "khalifa-street",
     name: "Khalifa Street",
+    lat: 24.478,
+    lng: 54.3708,
     address: "Khalifa Street Branch, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 622 41 82",
     phone2: "+971 (2) 622 41 81",
@@ -91,6 +104,8 @@ export const branches: Branch[] = [
   {
     id: "khalidiya",
     name: "Khalidiya",
+    lat: 24.4632,
+    lng: 54.352,
     address: "Daratul Miyah, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 621 8772",
     phone2: "+971 (2) 621 8773",
@@ -105,6 +120,8 @@ export const branches: Branch[] = [
   {
     id: "madina-zayed",
     name: "Madina Zayed",
+    lat: 24.4088,
+    lng: 54.5238,
     address: "Madinat Zayed Branch, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 634 50 80",
     phone2: "+971 (2) 633 81 79",
@@ -119,6 +136,8 @@ export const branches: Branch[] = [
   {
     id: "airport-road",
     name: "Airport Road",
+    lat: 24.4856,
+    lng: 54.3778,
     address: "Al Wahda, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 44 57 375",
     phone2: "+971 (2) 44 57 374",
@@ -133,6 +152,8 @@ export const branches: Branch[] = [
   {
     id: "mushrif",
     name: "Mushrif Mall",
+    lat: 24.4452,
+    lng: 54.3934,
     address: "Mushrif Mall, P.O. Box 70236, Abu Dhabi",
     phone: "+971 (2) 54 67 001",
     whatsapp: "+971 56 99 20 914",

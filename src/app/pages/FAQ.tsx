@@ -125,17 +125,19 @@ export function FAQ() {
   ];
 
   return (
-    <div className="min-h-screen pt-[130px] bg-black text-white">
+    <div className="min-h-screen bg-white pt-24 text-gray-900">
       <InnerPageBanner
         badge={
           <>
             <HelpCircle size={14} className="text-[#FFD700]" />
-            <span className="text-sm text-gray-300">Got Questions? We've Got Answers</span>
+            <span className="text-sm text-gray-300">
+              Got Questions? We've Got Answers
+            </span>
           </>
         }
         title={
           <>
-            Frequently Asked{" "}
+            <span className="text-[#ffffff]">Frequently Asked</span>{" "}
             <span className="bg-gradient-to-r from-[#FFD700] to-[#ffa500] bg-clip-text text-transparent">
               Questions
             </span>
@@ -144,9 +146,9 @@ export function FAQ() {
         subtitle="Find answers to common questions about our programs, membership, and training"
       />
 
-      {/* FAQ Content */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* FAQ Content — light */}
+      <section className="border-t border-gray-200 bg-white py-24 text-gray-900">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           {faqs.map((category, catIndex) => (
             <motion.div
               key={category.category}
@@ -156,24 +158,24 @@ export function FAQ() {
               transition={{ delay: catIndex * 0.05 }}
               className="mb-12"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-1 h-8 rounded-full bg-gradient-to-b from-[#FFD700] to-[#eb0339]" />
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-[#FFD700] to-[#ffa500] bg-clip-text text-transparent">
+              <div className="mb-6 flex items-center gap-3">
+                <div className="h-8 w-1 rounded-full bg-gradient-to-b from-[#eb0339] to-[#ff4d6d]" />
+                <h2 className="text-2xl font-bold text-gray-900">
                   {category.category}
                 </h2>
               </div>
-              
+
               <Accordion type="single" collapsible className="space-y-3">
                 {category.questions.map((faq, faqIndex) => (
                   <AccordionItem
                     key={faqIndex}
                     value={`${catIndex}-${faqIndex}`}
-                    className="bg-gradient-to-br from-gray-900 to-gray-900/50 border border-white/5 rounded-2xl px-6 overflow-hidden"
+                    className="overflow-hidden rounded-2xl border border-gray-200 bg-gray-50/80 px-6 shadow-sm"
                   >
-                    <AccordionTrigger className="text-left hover:text-[#eb0339] transition-colors py-5 text-white">
-                      <span className="font-medium pr-4">{faq.q}</span>
+                    <AccordionTrigger className="py-5 text-left text-gray-900 transition-colors hover:text-[#eb0339] hover:no-underline">
+                      <span className="pr-4 font-medium">{faq.q}</span>
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-400 pb-5 leading-relaxed">
+                    <AccordionContent className="pb-5 leading-relaxed text-gray-600">
                       {faq.a}
                     </AccordionContent>
                   </AccordionItem>
@@ -181,48 +183,6 @@ export function FAQ() {
               </Accordion>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* Still Have Questions - Light background */}
-      <section className="relative py-24 bg-gray-100 overflow-hidden">
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#eb0339]/10 text-[#eb0339] text-sm font-semibold mb-6">
-              <MessageCircle size={14} />
-              NEED MORE HELP?
-            </span>
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-gray-900">
-              Still Have{" "}
-              <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
-                Questions?
-              </span>
-            </h2>
-            <p className="text-gray-600 mb-10 text-lg">
-              We're here to help! Contact us or use our AI chat assistant for instant answers.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] text-white px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:shadow-lg hover:shadow-[#eb0339]/30 hover:scale-[1.02]"
-              >
-                Contact Us
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                to="/booking"
-                className="inline-flex items-center justify-center gap-2 bg-[#FFD700] text-black px-8 py-4 rounded-2xl font-bold transition-all duration-300 hover:bg-[#FFD700]/90 hover:scale-[1.02]"
-              >
-                <Sparkles size={18} />
-                Book Free Trial
-              </Link>
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

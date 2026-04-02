@@ -4,6 +4,8 @@ import { Footer } from "./Footer";
 import { FloatingCTA } from "./FloatingCTA";
 import { ChatAssistant } from "./ChatAssistant";
 import { ScrollToTop } from "./ScrollToTop";
+import { StayUpdatedCTA } from "./StayUpdatedCTA";
+import { StartYourJourneySection } from "./StartYourJourneySection";
 
 export function Layout() {
   return (
@@ -13,6 +15,8 @@ export function Layout() {
       <main>
         <Outlet />
       </main>
+      <StartYourJourneySection />
+      <StayUpdatedCTA />
       <Footer />
       <FloatingCTA />
       <ChatAssistant />

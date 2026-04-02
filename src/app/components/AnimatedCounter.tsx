@@ -6,9 +6,17 @@ interface AnimatedCounterProps {
   duration?: number;
   suffix?: string;
   prefix?: string;
+  /** Override default large gold styling (e.g. compact hero strip) */
+  valueClassName?: string;
 }
 
-export function AnimatedCounter({ end, duration = 2, suffix = "", prefix = "" }: AnimatedCounterProps) {
+export function AnimatedCounter({
+  end,
+  duration = 2,
+  suffix = "",
+  prefix = "",
+  valueClassName,
+}: AnimatedCounterProps) {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -55,8 +63,14 @@ export function AnimatedCounter({ end, duration = 2, suffix = "", prefix = "" }:
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <span className="text-4xl md:text-5xl font-bold text-[#FFD700]">
-        {prefix}{count}{suffix}
+      <span
+        className={
+          valueClassName ?? "text-4xl md:text-5xl font-bold text-[#FFD700]"
+        }
+      >
+        {prefix}
+        {count}
+        {suffix}
       </span>
     </motion.div>
   );
