@@ -75,7 +75,7 @@ export function Home() {
     {
       title: "Nine convenient branches",
       desc: "Train close to home or work with the same syllabus from Khalidiya to Al Reem and beyond.",
-      img: "https://images.unsplash.com/photo-1564419430463-087d9289ea2f?auto=format&fit=crop&w=800&q=80",
+      img: "https://images.unsplash.com/photo-1771909720903-c4567a890a6f?auto=format&fit=crop&w=800&q=80",
     },
     {
       title: "Kobudo & advanced paths",
@@ -109,7 +109,7 @@ export function Home() {
     <div className="min-h-screen overflow-hidden">
       <section
         ref={heroRef}
-        className="relative flex min-h-[calc(100svh)] flex-col overflow-hidden pt-24"
+        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-24"
       >
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <img
@@ -129,17 +129,18 @@ export function Home() {
 
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 flex min-h-0 flex-1 flex-col justify-between"
+          className="relative z-10 flex min-h-0 flex-1 flex-col"
         >
-          <div className="mx-auto w-full max-w-7xl">
-          <div className="flex flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, x: -28 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.75, ease: "easeOut" }}
-              className="max-w-xl"
-            >
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
+          {/* Vertically + horizontally centered main hero copy; stats bar stays at bottom */}
+          <div className="flex min-h-0 flex-1 flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+            <div className="mx-auto w-full max-w-7xl">
+              <motion.div
+                initial={{ opacity: 0, x: -28 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.75, ease: "easeOut" }}
+                className="mx-auto max-w-xl"
+              >
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#eb0339] opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#eb0339]" />
@@ -181,11 +182,11 @@ export function Home() {
                   Learn more
                 </button>
               </div>
-            </motion.div>
-          </div>
+              </motion.div>
+            </div>
           </div>
 
-          <div className="relative z-10 border-t border-white/15 bg-black/45 backdrop-blur-md">
+          <div className="relative z-10 shrink-0 border-t border-white/15 bg-black/45 backdrop-blur-md">
             <div className="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8">
               <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.22em] text-white/55 sm:text-[11px]">
                 Our Results in Numbers
