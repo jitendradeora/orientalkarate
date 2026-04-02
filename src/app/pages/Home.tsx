@@ -135,53 +135,53 @@ export function Home() {
           <div className="flex min-h-0 flex-1 flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
             <div className="mx-auto w-full max-w-7xl">
               <motion.div
-                initial={{ opacity: 0, x: -28 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: "easeOut" }}
-                className="mx-auto max-w-xl"
+                className="mx-auto flex max-w-xl flex-col items-center text-center"
               >
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#eb0339] opacity-75" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-[#eb0339]" />
-                </span>
-                <span className="text-sm font-medium text-white/90">
-                  Enrolling now for 2026
-                </span>
-              </div>
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#eb0339] opacity-75" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#eb0339]" />
+                  </span>
+                  <span className="text-sm font-medium text-white/90">
+                    Enrolling now for 2026
+                  </span>
+                </div>
 
-              <h1 className="mb-5 text-3xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl xl:text-5xl">
-                Master the art of{" "}
-                <span className="bg-gradient-to-r from-[#eb0339] to-[#ff6b86] bg-clip-text text-transparent">
-                  discipline
-                </span>
-              </h1>
+                <h1 className="mb-5 text-3xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl xl:text-5xl">
+                  Master the art of{" "}
+                  <span className="bg-gradient-to-r from-[#eb0339] to-[#ff6b86] bg-clip-text text-transparent">
+                    discipline
+                  </span>
+                </h1>
 
-              <p className="mb-8 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
-                Traditional Oriental Karate in Abu Dhabi — recognised
-                excellence, expert coaching, and programs for every age.
-              </p>
+                <p className="mb-8 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
+                  Traditional Oriental Karate in Abu Dhabi — recognised
+                  excellence, expert coaching, and programs for every age.
+                </p>
 
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Link
-                  to="/booking"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#eb0339]/25 transition-all hover:scale-[1.02] hover:shadow-[#eb0339]/35"
-                >
-                  Book Free Trial
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-0.5"
-                  />
-                </Link>
-                <button
-                  type="button"
-                  onClick={() => setVideoOpen(true)}
-                  className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/15"
-                >
-                  <Play size={18} className="text-[#eb0339]" />
-                  Learn more
-                </button>
-              </div>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+                  <Link
+                    to="/booking"
+                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#eb0339]/25 transition-all hover:scale-[1.02] hover:shadow-[#eb0339]/35"
+                  >
+                    Book Free Trial
+                    <ArrowRight
+                      size={18}
+                      className="transition-transform group-hover:translate-x-0.5"
+                    />
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => setVideoOpen(true)}
+                    className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/15"
+                  >
+                    <Play size={18} className="text-[#eb0339]" />
+                    Learn more
+                  </button>
+                </div>
               </motion.div>
             </div>
           </div>
