@@ -131,14 +131,14 @@ export function Home() {
           style={{ opacity: heroOpacity }}
           className="relative z-10 flex min-h-0 flex-1 flex-col"
         >
-          {/* Vertically + horizontally centered main hero copy; stats bar stays at bottom */}
+          {/* Main copy column centered in hero; text left-aligned inside column; stats at bottom */}
           <div className="flex min-h-0 flex-1 flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
             <div className="mx-auto w-full max-w-7xl">
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.75, ease: "easeOut" }}
-                className="mx-auto flex max-w-xl flex-col items-center text-center"
+                className="mx-0 flex w-full max-w-xl flex-col items-start text-left"
               >
                 <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
                   <span className="relative flex h-2 w-2">
@@ -162,7 +162,7 @@ export function Home() {
                   excellence, expert coaching, and programs for every age.
                 </p>
 
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start">
                   <Link
                     to="/booking"
                     className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#eb0339]/25 transition-all hover:scale-[1.02] hover:shadow-[#eb0339]/35"
