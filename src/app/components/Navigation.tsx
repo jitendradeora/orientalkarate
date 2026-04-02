@@ -29,8 +29,8 @@ const navLinks: NavItem[] = [
     path: "/programs",
     dropdown: [
       { name: "All Programs", path: "/programs" },
-      { name: "Kids (5–14)", path: "/programs/kids" },
-      { name: "Adults (15–60)", path: "/programs/adults" },
+      { name: "Kids Program(5–14)", path: "/programs/kids" },
+      { name: "Adults Program(15–60)", path: "/programs/adults" },
       { name: "Kobudo", path: "/programs/kobudo" },
       { name: "Classes & Custom", path: "/programs/classes-custom" },
     ],
@@ -259,7 +259,7 @@ export function Navigation() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
               onClick={() => setIsMenuOpen(false)}
-              className="fixed inset-0 min-h-full bg-gray-900/60 backdrop-blur-sm "
+              className="fixed inset-0 min-h-full bg-gray-900/40 backdrop-blur-sm"
               aria-hidden="true"
             />
 
@@ -272,25 +272,25 @@ export function Navigation() {
                 duration: 0.3,
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              className="fixed top-0 right-0 bottom-0 min-h-screen w-full lg:w-[40%] max-w-full z-[70] bg-gray-900/98 backdrop-blur-2xl border-l border-white/10 flex flex-col shadow-2xl "
+              className="fixed top-0 right-0 bottom-0 z-[70] flex max-h-[100dvh] min-h-screen w-full max-w-full flex-col border-l border-gray-200 bg-white shadow-2xl lg:w-[40%]"
             >
-              <div className="flex items-center justify-between p-5 border-b border-white/10">
+              <div className="flex items-center justify-between border-b border-gray-200 bg-white p-5">
                 <img
                   src={logoImage}
                   alt="Oriental Karate"
-                  className="h-14 w-auto max-w-[14rem] object-contain sm:h-16 sm:max-w-[16rem]"
+                  className="h-14 w-auto max-w-[14rem] object-contain brightness-0 sm:h-16 sm:max-w-[16rem]"
                 />
                 <motion.button
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-2 rounded-xl bg-white/5 border border-white/10 text-white"
+                  className="rounded-xl border border-gray-200 bg-gray-100 p-2 text-gray-900 hover:bg-gray-200"
                   aria-label="Close menu"
                 >
                   <X size={22} />
                 </motion.button>
               </div>
 
-              <div className="flex-1 overflow-y-auto px-4 py-6 space-y-1">
+              <div className="flex-1 space-y-1 overflow-y-auto bg-white px-4 py-6">
                 {navLinks.map((link, index) =>
                   "dropdown" in link ? (
                     <motion.div
@@ -306,10 +306,10 @@ export function Navigation() {
                             prev === link.path ? null : link.path,
                           )
                         }
-                        className={`w-full flex items-center justify-between text-base font-medium transition-all duration-300 py-3 px-4 rounded-xl ${
+                        className={`flex w-full items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all duration-300 ${
                           itemActive(location.pathname, link)
-                            ? "text-[#eb0339] bg-[#eb0339]/10"
-                            : "text-gray-300 hover:bg-white/5"
+                            ? "bg-[#eb0339]/10 text-[#eb0339]"
+                            : "text-gray-800 hover:bg-gray-100"
                         }`}
                       >
                         {link.name}
@@ -329,16 +329,16 @@ export function Navigation() {
                             transition={{ duration: 0.2 }}
                             className="overflow-hidden"
                           >
-                            <div className="pl-4 py-2 space-y-1">
+                            <div className="space-y-1 py-2 pl-4">
                               {link.dropdown.map((item) => (
                                 <Link
                                   key={item.path}
                                   to={item.path}
                                   onClick={() => setIsMenuOpen(false)}
-                                  className={`block text-sm font-medium transition-all py-2.5 px-4 rounded-xl ${
+                                  className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-all ${
                                     location.pathname === item.path
-                                      ? "text-[#eb0339] bg-[#eb0339]/10"
-                                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                                      ? "bg-[#eb0339]/10 text-[#eb0339]"
+                                      : "text-gray-600 hover:bg-gray-50 hover:text-[#eb0339]"
                                   }`}
                                 >
                                   {item.name}
@@ -359,10 +359,10 @@ export function Navigation() {
                       <Link
                         to={link.path}
                         onClick={() => setIsMenuOpen(false)}
-                        className={`block text-base font-medium transition-all duration-300 py-3 px-4 rounded-xl ${
+                        className={`block rounded-xl px-4 py-3 text-base font-medium transition-all duration-300 ${
                           location.pathname === link.path
-                            ? "text-[#eb0339] bg-[#eb0339]/10"
-                            : "text-gray-300 hover:bg-white/5"
+                            ? "bg-[#eb0339]/10 text-[#eb0339]"
+                            : "text-gray-800 hover:bg-gray-100"
                         }`}
                       >
                         {link.name}
@@ -380,7 +380,7 @@ export function Navigation() {
                   <Link
                     to="/booking"
                     onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] text-white px-4 py-3 rounded-full font-semibold text-sm text-center shadow-lg shadow-[#eb0339]/20"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#eb0339] to-[#ff1a4f] px-4 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#eb0339]/20"
                   >
                     <Sparkles size={16} />
                     Book Free Trial
@@ -388,8 +388,8 @@ export function Navigation() {
                 </motion.div>
               </div>
 
-              <div className="px-5 py-5 border-t border-white/10 bg-black/30">
-                <p className="text-xs font-semibold mb-3 text-gray-500 uppercase tracking-wider">
+              <div className="border-t border-gray-200 bg-gray-50 px-5 py-5">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">
                   Follow Us
                 </p>
                 <div className="flex gap-2">
@@ -397,7 +397,7 @@ export function Navigation() {
                     href="https://www.facebook.com/orientalkarate/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl transition-all duration-300 hover:scale-105 bg-white/5 border border-white/10 text-white hover:bg-[#1877F2] hover:border-[#1877F2]"
+                    className="rounded-xl border border-gray-200 bg-white p-3 text-gray-700 transition-all duration-300 hover:scale-105 hover:border-[#1877F2] hover:bg-[#1877F2] hover:text-white"
                   >
                     <Facebook size={18} />
                   </a>
@@ -405,7 +405,7 @@ export function Navigation() {
                     href="https://www.instagram.com/orientalkarate"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl transition-all duration-300 hover:scale-105 bg-white/5 border border-white/10 text-white hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:border-transparent"
+                    className="rounded-xl border border-gray-200 bg-white p-3 text-gray-700 transition-all duration-300 hover:scale-105 hover:border-pink-500 hover:bg-gradient-to-br hover:from-[#F58529] hover:via-[#DD2A7B] hover:to-[#8134AF] hover:text-white hover:[border-color:transparent]"
                   >
                     <Instagram size={18} />
                   </a>
@@ -413,7 +413,7 @@ export function Navigation() {
                     href="https://www.youtube.com/channel/UCqQd9ZlQQfYeZWzynGkRCJg"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl transition-all duration-300 hover:scale-105 bg-white/5 border border-white/10 text-white hover:bg-[#FF0000] hover:border-[#FF0000]"
+                    className="rounded-xl border border-gray-200 bg-white p-3 text-gray-700 transition-all duration-300 hover:scale-105 hover:border-[#FF0000] hover:bg-[#FF0000] hover:text-white"
                   >
                     <Youtube size={18} />
                   </a>

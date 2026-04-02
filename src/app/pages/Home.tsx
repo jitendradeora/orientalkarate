@@ -72,6 +72,16 @@ export function Home() {
       desc: "Nine branches across Abu Dhabi — find class times that fit school and work.",
       img: "https://images.unsplash.com/photo-1738835935023-ebff4a85bc7e?auto=format&fit=crop&w=800&q=80",
     },
+    {
+      title: "Nine convenient branches",
+      desc: "Train close to home or work with the same syllabus from Khalidiya to Al Reem and beyond.",
+      img: "https://images.unsplash.com/photo-1564419430463-087d9289ea2f?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      title: "Kobudo & advanced paths",
+      desc: "Grow from empty-hand karate into traditional Okinawan weapons and structured grading support.",
+      img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80",
+    },
   ];
 
   const heroStats = [
@@ -99,7 +109,7 @@ export function Home() {
     <div className="min-h-screen overflow-hidden">
       <section
         ref={heroRef}
-        className="relative flex min-h-[100svh] flex-col overflow-hidden pt-24"
+        className="relative flex min-h-[calc(100svh)] flex-col overflow-hidden pt-24"
       >
         <motion.div style={{ y: heroY }} className="absolute inset-0 z-0">
           <img
@@ -119,9 +129,10 @@ export function Home() {
 
         <motion.div
           style={{ opacity: heroOpacity }}
-          className="relative z-10 flex min-h-0 flex-1 flex-col"
+          className="relative z-10 flex min-h-0 flex-1 flex-col justify-between"
         >
-          <div className="flex flex-1 flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-7xl">
+          <div className="flex flex-col justify-center px-4 py-10 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, x: -28 }}
               animate={{ opacity: 1, x: 0 }}
@@ -171,6 +182,7 @@ export function Home() {
                 </button>
               </div>
             </motion.div>
+          </div>
           </div>
 
           <div className="relative z-10 border-t border-white/15 bg-black/45 backdrop-blur-md">
@@ -303,27 +315,27 @@ export function Home() {
         </div>
       </section>
 
-      {/* Why Join Oriental Karate — 4-up grid */}
-      <section className="relative py-20 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Why Join Oriental Karate — 8 items; 1 col mobile, 2 sm+, 4 lg+ */}
+      <section className="relative overflow-hidden bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-14"
+            className="mb-14 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-3">
+            <h2 className="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
               Why Join{" "}
               <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
                 Oriental Karate
               </span>
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="mx-auto max-w-2xl text-gray-600">
               Tradition, safety, and results — built for families and
               individuals across Abu Dhabi.
             </p>
           </motion.div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
             {whyJoinItems.map((item, i) => (
               <motion.div
                 key={item.title}
@@ -553,10 +565,7 @@ export function Home() {
                   articles
                 </span>
               </h2>
-              <p className="mt-2 max-w-xl text-gray-600">
-                Hand-picked articles for parents, students, and schools. Your
-                team controls which three appear here in the site data file.
-              </p>
+               
             </div>
             <Link
               to="/blog"

@@ -96,8 +96,8 @@ export function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone
+                  <label className="mb-2 block text-sm font-medium text-gray-700">
+                    WhatsApp number
                   </label>
                   <input
                     type="tel"
