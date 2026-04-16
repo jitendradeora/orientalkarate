@@ -43,43 +43,28 @@ export function Home() {
 
   const whyJoinItems = [
     {
-      title: "Recognized excellence",
-      desc: "UAE Karate Federation & Ministry of Youth and Sports recognition since 1987.",
+      title: "Training with Purpose",
+      desc: "Every class follows a clear plan for focused, consistent progress.",
       img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Expert instruction",
-      desc: "Learn from senior black belt instructors across every branch.",
+      title: "Safe & Supervised",
+      desc: " CCTV monitoring with multiple instructors in every class.",
       img: "https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "All ages & levels",
-      desc: "Structured paths from kids to adults — beginners welcome.",
+      title: "Growth, Not Just Training",
+      desc: "Belt progression and in-house tournaments that build real confidence.",
       img: "https://images.unsplash.com/photo-1738835935023-ebff4a85bc7e?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Community & discipline",
-      desc: "Tradition, respect, and a supportive dojo family in Abu Dhabi.",
+      title: "More Than Karate",
+      desc: "Flexibility, coordination, and mental focus built into every class.",
       img: "https://images.unsplash.com/photo-1771909720903-c4567a890a6f?auto=format&fit=crop&w=800&q=80",
     },
     {
-      title: "Proven competition pathway",
-      desc: "Optional tournament track and grading support for motivated students.",
-      img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Family-friendly scheduling",
-      desc: "Nine branches across Abu Dhabi — find class times that fit school and work.",
-      img: "https://images.unsplash.com/photo-1738835935023-ebff4a85bc7e?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Nine convenient branches",
-      desc: "Train close to home or work with the same syllabus from Khalidiya to Al Reem and beyond.",
-      img: "https://images.unsplash.com/photo-1771909720903-c4567a890a6f?auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      title: "Kobudo & advanced paths",
-      desc: "Grow from empty-hand karate into traditional Okinawan weapons and structured grading support.",
+      title: "Real Growth",
+      desc: "Turning energy into focus, confidence, and discipline.",
       img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80",
     },
   ];
@@ -88,17 +73,30 @@ export function Home() {
     { icon: Award, value: 39, suffix: "+", label: "Years", color: "#FFD700" },
     {
       icon: Users,
-      value: 10000,
+      value: 30000,
       suffix: "+",
       label: "Students trained",
       color: "#eb0339",
     },
-    { icon: Trophy, value: 9, suffix: "", label: "Branches", color: "#FFD700" },
+    {
+      icon: Trophy,
+      value: 9,
+      suffix: "",
+      label: "Locations in Abu Dhabi",
+      color: "#FFD700",
+    },
+    {
+      icon: Users,
+      value: 1500,
+      suffix: "+",
+      label: "Active Students",
+      color: "#34d399",
+    },
     {
       icon: UserCheck,
       value: 35,
       suffix: "+",
-      label: "Instructors",
+      label: "Professional Instructors",
       color: "#34d399",
     },
   ];
@@ -140,26 +138,13 @@ export function Home() {
                 transition={{ duration: 0.75, ease: "easeOut" }}
                 className="mx-0 flex w-full max-w-xl flex-col items-start text-left"
               >
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#eb0339] opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#eb0339]" />
-                  </span>
-                  <span className="text-sm font-medium text-white/90">
-                    Enrolling now for 2026
-                  </span>
-                </div>
-
                 <h1 className="mb-5 text-3xl font-bold leading-[1.08] text-white sm:text-5xl lg:text-6xl xl:text-5xl">
-                  Master the art of{" "}
-                  <span className="bg-gradient-to-r from-[#eb0339] to-[#ff6b86] bg-clip-text text-transparent">
-                    discipline
-                  </span>
+                  More Than a Sport{" "}
+                  <span className="bg-gradient-to-r from-[#eb0339] to-[#ff6b86] bg-clip-text text-transparent"></span>
                 </h1>
 
                 <p className="mb-8 max-w-lg text-base leading-relaxed text-white/85 sm:text-lg">
-                  Traditional Oriental Karate in Abu Dhabi — recognised
-                  excellence, expert coaching, and programs for every age.
+                  Confidence and Discipline for Life
                 </p>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-start">
@@ -179,7 +164,7 @@ export function Home() {
                     className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/30 bg-white/10 px-7 py-3.5 text-base font-semibold text-white backdrop-blur-sm transition-all hover:border-white/50 hover:bg-white/15"
                   >
                     <Play size={18} className="text-[#eb0339]" />
-                    Learn more
+                    Watch Class
                   </button>
                 </div>
               </motion.div>
@@ -191,7 +176,7 @@ export function Home() {
               <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.22em] text-white/55 sm:text-[11px]">
                 Our Results in Numbers
               </p>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-4">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-5">
                 {heroStats.map((stat, i) => (
                   <motion.div
                     key={stat.label}
@@ -226,7 +211,7 @@ export function Home() {
       </section>
 
       {/* About — light theme (layout preserved) */}
-      <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-b from-gray-50 to-white py-24">
+      {/* <section className="relative overflow-hidden border-b border-gray-200 bg-gradient-to-b from-gray-50 to-white py-24">
         <div className="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-gradient-to-l from-[#eb0339]/[0.06] to-transparent" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-6 lg:grid-cols-5">
@@ -314,7 +299,7 @@ export function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Join Oriental Karate — 8 items; 1 col mobile, 2 sm+, 4 lg+ */}
       <section className="relative overflow-hidden bg-white py-20">
@@ -326,7 +311,7 @@ export function Home() {
             className="mb-14 text-center"
           >
             <h2 className="mb-3 text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
-              Why Join{" "}
+              Why Families choose{" "}
               <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
                 Oriental Karate
               </span>
@@ -336,33 +321,66 @@ export function Home() {
               individuals across Abu Dhabi.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-            {whyJoinItems.map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-[#eb0339]/20 transition-all duration-300"
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={item.img}
-                    alt=""
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
+          <div className="space-y-4 sm:space-y-6">
+            {/* First row - 3 items */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+              {whyJoinItems.slice(0, 3).map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.05 }}
+                  className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-[#eb0339]/20 transition-all duration-300"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Second row - 2 items at 50% width, centered */}
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-2 lg:w-2/2 lg:mx-auto">
+              {whyJoinItems.slice(3).map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: (i + 3) * 0.05 }}
+                  className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-lg hover:border-[#eb0339]/20 transition-all duration-300"
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={item.img}
+                      alt=""
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -379,7 +397,7 @@ export function Home() {
             >
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#FFD700] text-sm font-semibold mb-6">
                 <Shield size={14} />
-                How it works
+                Get Started in 3 Simple Steps
               </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 Start in three <span className="text-[#eb0339]">simple</span>{" "}
@@ -389,18 +407,18 @@ export function Home() {
                 {[
                   {
                     step: "01",
-                    title: "Book a trial or visit",
-                    text: "Choose your nearest branch and book a free trial online or walk in during reception hours.",
+                    title: "Book Free Trial",
+                    text: "Schedule a class at your nearest branch.",
                   },
                   {
                     step: "02",
-                    title: "Meet your instructor",
-                    text: "We assess level and goals, then place you in the right age group and syllabus track.",
+                    title: "Visit & Experience",
+                    text: "See how classes run and meet our instructors.",
                   },
                   {
                     step: "03",
-                    title: "Train & grade",
-                    text: "Attend classes, track progress, and grade when your instructor clears you for testing.",
+                    title: "Start Training",
+                    text: "Join when you feel ready.",
                   },
                 ].map((s) => (
                   <li key={s.step} className="flex gap-4">
@@ -450,6 +468,27 @@ export function Home() {
       </section>
 
       <HomeLocationsGrid variant="home" />
+
+      {/* Google Reviews */}
+      <section className="py-24 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-4xl lg:text-5xl font-bold">
+              What Our{" "}
+              <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
+                Students
+              </span>{" "}
+              Say
+            </h2>
+          </motion.div>
+          <ReviewSlider />
+        </div>
+      </section>
 
       {/* Gallery Preview - Modern Grid */}
       <section className="py-24 bg-gray-900">
@@ -525,27 +564,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Google Reviews */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl lg:text-5xl font-bold">
-              What Our{" "}
-              <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
-                Students
-              </span>{" "}
-              Say
-            </h2>
-          </motion.div>
-          <ReviewSlider />
-        </div>
-      </section>
-
       {/* Latest from the blog — light */}
       <section className="border-t border-gray-200 bg-white py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -566,7 +584,6 @@ export function Home() {
                   articles
                 </span>
               </h2>
-               
             </div>
             <Link
               to="/blog"

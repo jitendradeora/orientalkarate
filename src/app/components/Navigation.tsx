@@ -23,7 +23,7 @@ type NavItem =
 
 const navLinks: NavItem[] = [
   { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
+  { name: "Our Story", path: "/about" },
   {
     name: "Programs",
     path: "/programs",
@@ -35,17 +35,9 @@ const navLinks: NavItem[] = [
       { name: "Classes & Custom", path: "/programs/classes-custom" },
     ],
   },
-  { name: "Gallery", path: "/gallery" },
-  {
-    name: "Join",
-    path: "/fee-admission",
-    dropdown: [
-      { name: "Fee & Admission", path: "/fee-admission" },
-      { name: "Book Free Trial", path: "/booking" },
-      { name: "Test Results", path: "/test-results" },
-      { name: "Offers", path: "/offers" },
-    ],
-  },
+  { name: "Special Offers", path: "/offers" },
+  { name: "Test Results", path: "/test-results" },
+
   {
     name: "Contact",
     path: "/contact",
@@ -54,7 +46,7 @@ const navLinks: NavItem[] = [
       { name: "FAQ", path: "/faq" },
     ],
   },
-  { name: "Blog", path: "/blog" },
+  { name: "Articles", path: "/blog" },
 ];
 
 function pathActive(pathname: string, path: string) {
