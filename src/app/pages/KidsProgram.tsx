@@ -1,16 +1,55 @@
 import { motion } from "motion/react";
-import { Heart, Shield, Star, Users, Trophy, Smile, ArrowRight, CheckCircle } from "lucide-react";
+import {
+  Heart,
+  Shield,
+  Star,
+  Users,
+  Trophy,
+  Smile,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
 import { Link } from "react-router";
 import { InnerPageBanner } from "../components/InnerPageBanner";
 
 export function KidsProgram() {
   const benefits = [
-    { icon: Shield, title: "Confidence", description: "Build self-esteem through achievement and mastery", color: "#eb0339" },
-    { icon: Star, title: "Discipline", description: "Learn self-control and respect for authority", color: "#eb0339" },
-    { icon: Heart, title: "Fitness", description: "Develop healthy habits and physical fitness", color: "#eb0339" },
-    { icon: Users, title: "Social Skills", description: "Make friends and learn teamwork", color: "#eb0339" },
-    { icon: Trophy, title: "Goal Setting", description: "Work towards belt rankings and achievements", color: "#eb0339" },
-    { icon: Smile, title: "Fun!", description: "Enjoy exciting and engaging classes", color: "#eb0339" },
+    {
+      icon: Shield,
+      title: "Confidence",
+      description: "Build self-esteem through achievement and mastery",
+      color: "#eb0339",
+    },
+    {
+      icon: Star,
+      title: "Discipline",
+      description: "Learn self-control and respect for authority",
+      color: "#eb0339",
+    },
+    {
+      icon: Heart,
+      title: "Fitness",
+      description: "Develop healthy habits and physical fitness",
+      color: "#eb0339",
+    },
+    {
+      icon: Users,
+      title: "Social Skills",
+      description: "Make friends and learn teamwork",
+      color: "#eb0339",
+    },
+    {
+      icon: Trophy,
+      title: "Goal Setting",
+      description: "Work towards belt rankings and achievements",
+      color: "#eb0339",
+    },
+    {
+      icon: Smile,
+      title: "Fun!",
+      description: "Enjoy exciting and engaging classes",
+      color: "#eb0339",
+    },
   ];
 
   const safetyMeasures = [
@@ -30,25 +69,31 @@ export function KidsProgram() {
         badge={
           <>
             <Smile size={14} className="text-[#FFD700]" />
-            <span className="text-sm text-gray-300">Ages 5-14 • Fun & Engaging Classes</span>
+            <span className="text-sm text-gray-300">
+              Ages 5-14 • Fun & Engaging Classes
+            </span>
           </>
         }
         title={
           <>
             <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
-              Karate
+              Karate for
             </span>{" "}
-            for Kids
+            Kids (5–14)
           </>
         }
-        subtitle="Building confident, disciplined, and healthy young martial artists"
+        subtitle="Structured training for families who value discipline, focus, and long-term growth"
       />
 
       {/* WHY KIDS — light */}
       <section className="border-b border-gray-200 bg-white py-20 text-gray-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
               <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#eb0339]/10 px-4 py-2 text-sm font-semibold text-[#eb0339]">
                 <Heart size={14} />
                 WHY KIDS LOVE US
@@ -61,11 +106,13 @@ export function KidsProgram() {
                 Our Program
               </h2>
               <p className="mb-4 text-lg leading-relaxed text-gray-600">
-                Our kids&apos; karate program is fun, engaging, and educational. We balance martial arts with games,
-                activities, and positive reinforcement so children learn best while enjoying class.
+                Our kids&apos; karate program is fun, engaging, and educational.
+                We balance martial arts with games, activities, and positive
+                reinforcement so children learn best while enjoying class.
               </p>
               <p className="mb-8 text-lg leading-relaxed text-gray-600">
-                Every session builds physical skills, mental discipline, and character in an age-appropriate way.
+                Every session builds physical skills, mental discipline, and
+                character in an age-appropriate way.
               </p>
               <Link
                 to="/booking"
@@ -75,7 +122,12 @@ export function KidsProgram() {
                 <ArrowRight size={18} />
               </Link>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
               <div className="relative overflow-hidden rounded-3xl border border-gray-200 shadow-lg">
                 <img
                   src="https://images.unsplash.com/photo-1738835935023-ebff4a85bc7e?auto=format&fit=crop&w=1200&q=80"
@@ -125,8 +177,12 @@ export function KidsProgram() {
                 >
                   <benefit.icon size={28} style={{ color: benefit.color }} />
                 </div>
-                <h3 className="mb-2 text-xl font-bold text-gray-900">{benefit.title}</h3>
-                <p className="text-sm leading-relaxed text-gray-600">{benefit.description}</p>
+                <h3 className="mb-2 text-xl font-bold text-gray-900">
+                  {benefit.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-600">
+                  {benefit.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -147,11 +203,12 @@ export function KidsProgram() {
               SAFETY FIRST
             </span>
             <h2 className="text-3xl font-bold sm:text-4xl lg:text-5xl">
-              Your Child&apos;s{" "}
-              <span className="text-[#eb0339]">Safety</span> Matters
+              Your Child&apos;s <span className="text-[#eb0339]">Safety</span>{" "}
+              Matters
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-gray-600">
-              We design every class around safe progression, qualified staff, and clear communication with families.
+              We design every class around safe progression, qualified staff,
+              and clear communication with families.
             </p>
           </motion.div>
 
@@ -168,7 +225,9 @@ export function KidsProgram() {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#eb0339]/10">
                   <CheckCircle className="h-5 w-5 text-[#eb0339]" />
                 </div>
-                <p className="pt-1 text-sm leading-relaxed text-gray-700">{measure}</p>
+                <p className="pt-1 text-sm leading-relaxed text-gray-700">
+                  {measure}
+                </p>
               </motion.li>
             ))}
           </ul>
