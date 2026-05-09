@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useLocation } from "react-router";
 import { InnerPageBanner } from "../components/InnerPageBanner";
+import OurResults from "../components/OurResults";
 
 /** Lead faculty (row 1: 2-up) + extended team (row 2: 3-up) */
 const featuredInstructors = [
@@ -134,29 +135,7 @@ export function About() {
         subtitle="Where Discipline Shapes Character. Confidence Follows."
       />
 
-      {/* Stats Bar */}
-      <section className="relative py-8 bg-gradient-to-r from-[#eb0339] via-[#c70230] to-[#eb0339]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center text-white"
-              >
-                <div className="flex items-center justify-center gap-2 mb-1">
-                  <stat.icon size={18} className="opacity-80" />
-                  <span className="text-3xl font-bold">{stat.value}</span>
-                </div>
-                <p className="text-sm text-white/80">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <OurResults />
 
       {/* Main Story */}
       <section className="py-24 bg-gray-950">
@@ -167,10 +146,6 @@ export function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#eb0339]/10 text-[#eb0339] text-sm font-semibold mb-6">
-                <Star size={14} />
-                OUR STORY
-              </span>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 A Legacy of{" "}
                 <span className="bg-gradient-to-r from-[#eb0339] to-[#ff4d6d] bg-clip-text text-transparent">
@@ -304,66 +279,6 @@ export function About() {
                 </motion.article>
               ))}
             </div>
-
-            {/* Row 2 — three compact cards */}
-            <div>
-              <p className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">
-                Faculty & team
-              </p>
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 sm:gap-6">
-                {extendedFaculty.map((inst, index) => {
-                  const isPlaceholder = inst.rank === "Placeholder";
-                  return (
-                    <motion.article
-                      key={`ext-${inst.name}-${index}`}
-                      initial={{ opacity: 0, y: 14 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.12 + index * 0.06 }}
-                      className="flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm ring-1 ring-black/[0.03] transition hover:-translate-y-0.5 hover:border-[#eb0339]/20 hover:shadow-md"
-                    >
-                      <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                        <img
-                          src={inst.image}
-                          alt=""
-                          className="h-full w-full object-cover object-top"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
-                        {isPlaceholder && (
-                          <span className="absolute right-3 top-3 rounded-full bg-black/55 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
-                            Coming soon
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-1 flex-col p-4 sm:p-5">
-                        <p className="font-bold text-gray-900">
-                          {inst.name}{" "}
-                          {!isPlaceholder && (
-                            <span className="text-[#eb0339]">{inst.rank}</span>
-                          )}
-                        </p>
-                        <p className="mt-2 flex-1 text-xs leading-relaxed text-gray-600">
-                          {inst.role}
-                        </p>
-                        {(inst.listtext?.length ?? 0) > 0 && (
-                          <ul className="mt-3 space-y-1.5 border-t border-gray-100 pt-3 text-xs leading-relaxed text-gray-600">
-                            {(inst.listtext ?? []).map((text, liIndex) => (
-                              <li key={liIndex} className="flex gap-1.5">
-                                <span
-                                  className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-[#eb0339]/80"
-                                  aria-hidden
-                                />
-                                <span>{text}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-                    </motion.article>
-                  );
-                })}
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -413,14 +328,10 @@ export function About() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFD700]/10 text-[#FFD700] text-sm font-semibold mb-6">
-              <Heart size={14} />
-              OUR VALUES
-            </span>
             <h2 className="text-4xl lg:text-5xl font-bold">
-              What We{" "}
+              The Change
               <span className="bg-gradient-to-r from-[#FFD700] to-[#ffa500] bg-clip-text text-transparent">
-                Stand For
+                You'll See
               </span>
             </h2>
           </motion.div>

@@ -13,9 +13,20 @@ export function BlogDetails() {
   const { slug } = useParams();
   const post = blogPosts.find((p) => p.id === slug);
 
-  const title = post?.title ?? (slug ? slug.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ") : "Blog article");
-  const cover = post?.image ?? "https://www.orientalkarate.com/wp-content/uploads/2020/02/DSC6218-scaled.jpg";
-  const meta = post ? `${post.date} · ${post.readTime}` : "Oriental Karate & Kobudo Club";
+  const title =
+    post?.title ??
+    (slug
+      ? slug
+          .split("-")
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(" ")
+      : "Blog article");
+  const cover =
+    post?.image ??
+    "https://www.orientalkarate.com/wp-content/uploads/2020/02/DSC6218-scaled.jpg";
+  const meta = post
+    ? `${post.date} · ${post.readTime}`
+    : "Oriental Karate & Kobudo Club";
   const tags = post?.tags ?? ["Karate", "Training", "Abu Dhabi"];
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
@@ -34,13 +45,19 @@ export function BlogDetails() {
             <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-semibold tracking-wide bg-[#eb0339]/10 text-[#eb0339]">
               ORIENTAL KARATE · BLOG
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900">{title}</h1>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-gray-900">
+              {title}
+            </h1>
             <p className="text-gray-500 text-sm">
               {meta} · Oriental Karate &amp; Kobudo Club
             </p>
           </div>
           <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
-            <img src={cover} alt="" className="w-full h-full max-h-[420px] object-cover" />
+            <img
+              src={cover}
+              alt=""
+              className="w-full h-full max-h-[420px] object-cover"
+            />
           </div>
         </div>
       </section>
@@ -54,10 +71,15 @@ export function BlogDetails() {
               viewport={{ once: true }}
               className="prose prose-neutral max-w-none text-gray-700"
             >
-              <p className="lead text-lg text-gray-600">{post?.excerpt ?? ""}</p>
-              {defaultBody.split("\n\n").map((para) => (
-                <p key={para}>{para}</p>
-              ))}
+              {post?.body && (
+                <div
+                  className="prose prose-neutral max-w-none text-gray-700 grid gap-4"
+                  dangerouslySetInnerHTML={{ __html: post.body }}
+                />
+              )}
+              {!post?.body && (
+                <p className="text-gray-500 text-sm">{defaultBody}</p>
+              )}
             </motion.article>
 
             <motion.aside
@@ -67,9 +89,12 @@ export function BlogDetails() {
               className="space-y-6"
             >
               <div className="rounded-2xl p-5 border border-gray-200 bg-white shadow-sm">
-                <h2 className="text-sm font-semibold mb-3 text-gray-900">Share this article</h2>
+                <h2 className="text-sm font-semibold mb-3 text-gray-900">
+                  Share this article
+                </h2>
                 <p className="text-gray-500 text-xs mb-4">
-                  Share with friends, students or colleagues who would benefit from this.
+                  Share with friends, students or colleagues who would benefit
+                  from this.
                 </p>
                 <div className="flex gap-2">
                   <button
@@ -102,12 +127,16 @@ export function BlogDetails() {
                   </button>
                 </div>
                 {shareUrl && (
-                  <p className="text-gray-400 text-[10px] mt-3 break-all">{shareUrl}</p>
+                  <p className="text-gray-400 text-[10px] mt-3 break-all">
+                    {shareUrl}
+                  </p>
                 )}
               </div>
 
               <div className="rounded-2xl p-5 border border-gray-200 bg-white shadow-sm">
-                <h2 className="text-sm font-semibold mb-3 text-gray-900">Tags</h2>
+                <h2 className="text-sm font-semibold mb-3 text-gray-900">
+                  Tags
+                </h2>
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => (
                     <span

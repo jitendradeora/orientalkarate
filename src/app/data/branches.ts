@@ -29,8 +29,7 @@ export const branches: Branch[] = [
     address:
       "Next to Oryx Hotel, same building as Spar Supermarket, Al Ahlia Tower - A Block - M Floor (M2), Abu Dhabi",
     phone: "+971 (2) 677 1611",
-    phone2: "+971 (2) 677 8878",
-    whatsapp: "+971 50 677 16 89",
+    whatsapp: "+971 50 677 1689",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Khalidiya+Head+Office+Abu+Dhabi",
     hours: {
@@ -62,9 +61,8 @@ export const branches: Branch[] = [
     lng: 54.3677,
     address:
       "Next to ADCB Head Office, same building as ADCOOP, 2nd Floor (202), Abu Dhabi",
-    phone: "+971 (2) 67 17 072",
-    phone2: "+971 (2) 67 17 071",
-    whatsapp: "+971 50 67 17 607",
+    phone: "+971 (2) 671 7072",
+    whatsapp: "+971 50 671 7607",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Electra+Salam+Corner+Abu+Dhabi",
     hours: {
@@ -95,9 +93,8 @@ export const branches: Branch[] = [
     lat: 24.478,
     lng: 54.3708,
     address: "Next to WTC Mall, Al Fahim Tower - 2nd Floor (206), Abu Dhabi",
-    phone: "+971 (2) 622 41 82",
-    phone2: "+971 (2) 622 41 81",
-    whatsapp: "+971 50 622 40 94",
+    phone: "+971 (2) 622 4181",
+    whatsapp: "+971 50 622 4094",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Khalifa+Street+Abu+Dhabi",
     hours: {
@@ -114,7 +111,7 @@ export const branches: Branch[] = [
       "Opposite ADCB Al Hosn Branch and Grand Stores, Khalidiya Tower - Separate side entrance, Abu Dhabi",
     phone: "+971 (2) 621 8772",
     phone2: "+971 (2) 621 8773",
-    whatsapp: "+971 50 621 88 36",
+    whatsapp: "+971 50 621 8836",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Daratul+Miyah+Khalidiya+Abu+Dhabi",
     hours: {
@@ -129,9 +126,8 @@ export const branches: Branch[] = [
     lng: 54.5238,
     address:
       "Next to NMC Specialty Hospital, Zayed The First Street, Sama Tower - M1 Floor (101), Abu Dhabi",
-    phone: "+971 (2) 634 50 80",
-    phone2: "+971 (2) 633 81 79",
-    whatsapp: "+971 50 634 50 58",
+    phone: "+971 (2) 634 5080",
+    whatsapp: "+971 50 634 5058",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Madinat+Zayed+Abu+Dhabi",
     hours: {
@@ -145,9 +141,8 @@ export const branches: Branch[] = [
     lat: 24.4856,
     lng: 54.3778,
     address: "Extension side 2nd Floor, Above ADCB, Abu Dhabi",
-    phone: "+971 (2) 44 57 375",
-    phone2: "+971 (2) 44 57 374",
-    whatsapp: "+971 50 44 57 324",
+    phone: "+971 (2) 445 7374",
+    whatsapp: "+971 50 445 7324",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Al+Wahda+Airport+Road+Abu+Dhabi",
     hours: {
@@ -161,8 +156,8 @@ export const branches: Branch[] = [
     lat: 24.4452,
     lng: 54.3934,
     address: "3rd Floor - Near Sparky's, Abu Dhabi",
-    phone: "+971 (2) 54 67 001",
-    whatsapp: "+971 56 99 20 914",
+    phone: "+971 (2) 546 7001",
+    whatsapp: "+971 56 992 0914",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Mushrif+Mall+Abu+Dhabi",
     hours: {

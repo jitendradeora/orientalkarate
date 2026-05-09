@@ -22,6 +22,8 @@ import { HomeLocationsGrid } from "../components/HomeLocationsGrid";
 import { getFeaturedHomePosts } from "../data/blogPosts";
 import { useRef } from "react";
 
+import OurResults from "../components/OurResults";
+
 const HERO_VIDEO_ID = "XYwE8Gn61qM"; // Replace with your YouTube video ID
 
 export function Home() {
@@ -66,38 +68,6 @@ export function Home() {
       title: "Real Growth",
       desc: "Turning energy into focus, confidence, and discipline.",
       img: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=800&q=80",
-    },
-  ];
-
-  const heroStats = [
-    { icon: Award, value: 39, suffix: "+", label: "Years", color: "#FFD700" },
-    {
-      icon: Users,
-      value: 30000,
-      suffix: "+",
-      label: "Students trained",
-      color: "#eb0339",
-    },
-    {
-      icon: Trophy,
-      value: 9,
-      suffix: "",
-      label: "Locations in Abu Dhabi",
-      color: "#FFD700",
-    },
-    {
-      icon: Users,
-      value: 1500,
-      suffix: "+",
-      label: "Active Students",
-      color: "#34d399",
-    },
-    {
-      icon: UserCheck,
-      value: 35,
-      suffix: "+",
-      label: "Professional Instructors",
-      color: "#34d399",
     },
   ];
 
@@ -171,42 +141,8 @@ export function Home() {
             </div>
           </div>
 
-          <div className="relative z-10 shrink-0 border-t border-white/15 bg-black/45 backdrop-blur-md">
-            <div className="mx-auto max-w-7xl px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8">
-              <p className="mb-2 text-center text-[10px] font-bold uppercase tracking-[0.22em] text-white/55 sm:text-[11px]">
-                Our Results in Numbers
-              </p>
-              <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:grid-cols-5">
-                {heroStats.map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.15 + i * 0.05 }}
-                    className="rounded-lg border border-white/10 bg-white/5 px-2 py-2 text-center sm:px-3 sm:py-2.5"
-                  >
-                    <div
-                      className="mx-auto mb-1 flex h-8 w-8 items-center justify-center rounded-md sm:h-9 sm:w-9"
-                      style={{ backgroundColor: `${stat.color}22` }}
-                    >
-                      <stat.icon
-                        className="h-4 w-4 sm:h-[18px] sm:w-[18px]"
-                        style={{ color: stat.color }}
-                      />
-                    </div>
-                    <AnimatedCounter
-                      end={stat.value}
-                      suffix={stat.suffix}
-                      valueClassName="text-lg font-bold text-white sm:text-xl"
-                    />
-                    <p className="mt-0.5 text-[10px] font-medium text-white/65 sm:text-[11px]">
-                      {stat.label}
-                    </p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
+          <OurResults />
+          {/* Import Our Results in Numbers components */}
         </motion.div>
       </section>
 
@@ -395,10 +331,6 @@ export function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-[#FFD700] text-sm font-semibold mb-6">
-                <Shield size={14} />
-                Get Started in 3 Simple Steps
-              </span>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
                 Start in three <span className="text-[#eb0339]">simple</span>{" "}
                 steps
