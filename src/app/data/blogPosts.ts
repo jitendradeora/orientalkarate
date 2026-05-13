@@ -166,18 +166,12 @@ export const blogPosts: BlogPost[] = [
    
 ];
 
-/**
- * Homepage featured posts — change this list to control which three articles appear on the home page.
- * Order is preserved; invalid ids are skipped.
- */
-export const FEATURED_HOME_SLUGS: string[] = [
-  "building-discipline-through-karate",
-  "why-kids-benefit-from-karate",
-  "corporate-martial-arts-programs",
-];
+const HOME_LATEST_POST_COUNT = 3;
 
+/**
+ * Latest posts for the home page: last entries in `blogPosts` (newest assumed appended), newest first.
+ */
 export function getFeaturedHomePosts(): BlogPost[] {
-  return FEATURED_HOME_SLUGS.map((id) => blogPosts.find((p) => p.id === id)).filter(
-    (p): p is BlogPost => Boolean(p)
-  );
+  if (blogPosts.length === 0) return [];
+  return blogPosts.slice(-HOME_LATEST_POST_COUNT).reverse();
 }

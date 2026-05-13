@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { MapPin, Phone, ChevronDown, ExternalLink, Search } from "lucide-react";
+import { MapPin, Phone, ChevronDown, ExternalLink, Search, MessageCircle } from "lucide-react";
 import { branches } from "../data/branches";
 import { findNearestBranchId } from "../utils/geo";
 
@@ -178,11 +178,18 @@ export function HomeLocationsGrid({ variant = "home" }: Props) {
                             {branch.phone2 && (
                               <a
                                 href={`tel:${branch.phone2.replace(/\s/g, "")}`}
-                                className="text-sm font-medium text-[#eb0339] hover:underline"
+                                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-[#eb0339] hover:text-[#eb0339]"
                               >
                                 {branch.phone2}
                               </a>
                             )}
+                            <a
+                              href={`tel:${branch.whatsapp.replace(/\s/g, "")}`}
+                              className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-4 py-2 text-sm font-semibold text-gray-900 transition-colors hover:border-[#eb0339] hover:text-[#eb0339]"
+                            >
+                              <MessageCircle className="h-4 w-4 text-[#eb0339]" />
+                              {branch.whatsapp}
+                            </a>
                           </div>
 
                           <a

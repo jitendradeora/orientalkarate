@@ -37,6 +37,21 @@ export const branches: Branch[] = [
       weekend: "8:00 AM - 6:00 PM",
     },
   },
+    {
+    id: "khalidiya-ho",
+    name: "Al Wahda Mall Branch",
+    //lat: 24.4749,
+    //lng: 54.3486,
+    address: "Extension side 2nd Floor Above ADCB",
+    phone: "+971 (2) 445 7374",
+    whatsapp: "+971 50 445 7324",
+    email: "karate@emirates.net.ae",
+    //googleMapsUrl: "https://maps.google.com/?q=Khalidiya+Head+Office+Abu+Dhabi",
+    hours: {
+      weekday: "6:00 AM - 9:00 PM",
+      weekend: "8:00 AM - 6:00 PM",
+    },
+  },
   {
     id: "mussaffa",
     name: "Mussaffa",
