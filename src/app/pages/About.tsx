@@ -15,6 +15,8 @@ import {
 import { useLocation } from "react-router";
 import { InnerPageBanner } from "../components/InnerPageBanner";
 import OurResults from "../components/OurResults";
+import chiefInstructorImage from "../../assets/images/ali-mohammed-kyoshi-chief-examiner.jpg";
+import assistantChiefInstructorImage from "../../assets/images/yoosuf-renshi-asst-chief-examiner.jpg";
 
 /** Lead faculty (row 1: 2-up) + extended team (row 2: 3-up) */
 const featuredInstructors = [
@@ -28,8 +30,7 @@ const featuredInstructors = [
       "50+ Years of Experience",
       "Continuously training worldwide, he develops the instructors and systems behind every class at OKKC—training daily, rain or shine",
     ],
-    image:
-      "https://www.orientalkarate.com/wp-content/uploads/2020/02/nizar-benefit-500x746.jpg",
+    image: chiefInstructorImage,
   },
   {
     name: "Yoosuf",
@@ -41,8 +42,7 @@ const featuredInstructors = [
       "50+ Years of Experience",
       "Rooted in tradition and deep knowledge, he leads grading and progression at OKKC—ensuring every standard is upheld with discipline and integrity",
     ],
-    image:
-      "https://www.orientalkarate.com/wp-content/uploads/2021/04/7-500x746.jpg",
+    image: assistantChiefInstructorImage,
   },
   {
     name: "Senior Instructor",
@@ -138,7 +138,7 @@ export function About() {
       <OurResults />
 
       {/* Main Story */}
-      <section className="py-24 bg-gray-950">
+      {/* <section className="py-24 bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -196,12 +196,12 @@ export function About() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
-              {/* Decorative border */}
+
               <div className="absolute -z-10 top-4 right-4 w-full h-full rounded-3xl border-2 border-[#eb0339]/30" />
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Instructors — row 1: 2 featured | row 2: 3 compact */}
       <section
@@ -238,14 +238,14 @@ export function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className="group relative flex min-h-0 flex-col overflow-hidden rounded-3xl border border-gray-200/90 bg-white shadow-[0_20px_50px_-24px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.04] transition hover:border-[#eb0339]/25 hover:shadow-[0_24px_60px_-20px_rgba(235,3,57,0.18)] lg:flex-row lg:min-h-[300px]"
+                  className="group relative flex min-h-0 flex-col overflow-hidden rounded-3xl border border-gray-200/90 bg-white shadow-[0_20px_50px_-24px_rgba(0,0,0,0.25)] ring-1 ring-black/[0.04] transition hover:border-[#eb0339]/25 hover:shadow-[0_24px_60px_-20px_rgba(235,3,57,0.18)] lg:min-h-[300px]"
                 >
                   <div className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-[#eb0339] via-[#ff4d6d] to-[#FFD700] opacity-90" />
-                  <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden bg-gray-100 sm:aspect-[16/10] lg:aspect-auto lg:w-[44%] lg:max-w-md">
+                  <div className="relative aspect-[16/10] min-h-[300px] w-full shrink-0 overflow-hidden bg-gray-100  ">
                     <img
                       src={inst.image}
                       alt=""
-                      className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                      className="h-full  w-full object-cover transition duration-500 group-hover:scale-[1.02]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-black/10 lg:to-black/35" />
                     <span className="absolute bottom-3 left-3 rounded-full bg-white/95 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-[#eb0339] shadow-sm backdrop-blur-sm">

@@ -24,7 +24,7 @@ import { useRef } from "react";
 
 import OurResults from "../components/OurResults";
 
-const HERO_VIDEO_ID = "XYwE8Gn61qM"; // Replace with your YouTube video ID
+const HERO_VIDEO_ID = "R-y9mEOfUnc"; // Replace with your YouTube video ID
 
 export function Home() {
   const heroRef = useRef(null);
