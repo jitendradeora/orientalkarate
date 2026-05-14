@@ -38,15 +38,15 @@ export const branches: Branch[] = [
     },
   },
     {
-    id: "khalidiya-ho",
+    id: "al-wahda-mall",
     name: "Al Wahda Mall Branch",
     //lat: 24.4749,
     //lng: 54.3486,
     address: "Extension side 2nd Floor Above ADCB",
-    phone: "+971 (2) 445 7374",
+    phone: "+971 (2) 445 7374", 
     whatsapp: "+971 50 445 7324",
     email: "karate@emirates.net.ae",
-    //googleMapsUrl: "https://maps.google.com/?q=Khalidiya+Head+Office+Abu+Dhabi",
+    googleMapsUrl: "https://maps.google.com/?q=Khalidiya+Head+Office+Abu+Dhabi",
     hours: {
       weekday: "6:00 AM - 9:00 PM",
       weekend: "8:00 AM - 6:00 PM",
@@ -59,9 +59,8 @@ export const branches: Branch[] = [
     lng: 54.5107,
     address:
       "Near LLH Medical Centre - Mohammed Bin Zayed City, C169 Building - M Floor (M2), Abu Dhabi",
-    phone: "+971 (2) 55 66 034",
-    phone2: "+971 (2) 55 66 035",
-    whatsapp: "+971 50 55 62 398",
+    phone: "+971 (2) 556 6034",
+    whatsapp: "+971 50 556 2398",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Mussaffah+Abu+Dhabi",
     hours: {
@@ -93,8 +92,7 @@ export const branches: Branch[] = [
     address:
       "Marina Square Community, Ocean Terrace (Tower 1), 4th Floor (402), Abu Dhabi",
     phone: "+971 (2) 641 6620",
-    phone2: "+971 (2) 641 6624",
-    whatsapp: "+971 50 64 16 780",
+    whatsapp: "+971 50 641 6780",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Al+Reem+Island+Abu+Dhabi",
     hours: {
@@ -104,7 +102,7 @@ export const branches: Branch[] = [
   },
   {
     id: "khalifa-street",
-    name: "Khalifa Street",
+    name: "Khalifa Street Branch",
     lat: 24.478,
     lng: 54.3708,
     address: "Next to WTC Mall, Al Fahim Tower - 2nd Floor (206), Abu Dhabi",
@@ -119,13 +117,12 @@ export const branches: Branch[] = [
   },
   {
     id: "khalidiya",
-    name: "Khalidiya",
+    name: "Khalidiya (Daratul Miya) Branch",
     lat: 24.4632,
     lng: 54.352,
     address:
       "Opposite ADCB Al Hosn Branch and Grand Stores, Khalidiya Tower - Separate side entrance, Abu Dhabi",
     phone: "+971 (2) 621 8772",
-    phone2: "+971 (2) 621 8773",
     whatsapp: "+971 50 621 8836",
     email: "karate@emirates.net.ae",
     googleMapsUrl: "https://maps.google.com/?q=Daratul+Miyah+Khalidiya+Abu+Dhabi",
@@ -136,7 +133,7 @@ export const branches: Branch[] = [
   },
   {
     id: "madina-zayed",
-    name: "Madina Zayed",
+    name: "Madinat Zayed (Electra) Branch",
     lat: 24.4088,
     lng: 54.5238,
     address:
